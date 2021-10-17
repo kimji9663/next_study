@@ -12,7 +12,7 @@ export default function Order() {
   console.log( 'number : ', number );
   number++;
   console.log( 'number : ', number );
-  
+
   // [ 일기전용, 쓰기전용 ] = useState( 기본값 );
   const [ hasEspresso, setEspresso ] = useState( false );
   const [ hasAmericano, setAmericano ] = useState( false );
@@ -21,6 +21,8 @@ export default function Order() {
   sum += hasEspresso ? 2800 : 0;
   sum += hasAmericano ? 3000 : 0;
   sum += hasLatte ? 3500 : 0;
+
+  const [ count, setCount ] = useState(0);
 
   console.log('랜더링 시작');
 
