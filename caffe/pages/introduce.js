@@ -6,7 +6,7 @@ export default function Home() {
     <div className="container">
         <Header/>
         
-        <h1>Intruduce</h1>
+        <h1 className="font-bold">Intruduce</h1>
     </div>
   </>
 }

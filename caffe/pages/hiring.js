@@ -6,7 +6,9 @@ export default function Home() {
     <div className="container">
         <Header/>
         
-        <h1>Hiring</h1>
+        <h1 className="font-bold">Hiring</h1>
+
+        <p>Caffe에서는 언제는 새로운 직원을 뽑고 있습니다!</p>
     </div>
   </>
 }
