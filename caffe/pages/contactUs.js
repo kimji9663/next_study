@@ -3,8 +3,12 @@ import Header from '../components/Header';
 import { useState } from 'react';
 
 export default function ContactUs() {
-  const [email, setEmail ] = useState('');
-  const handle
+  const [ email, setEmail ] = useState('');
+  const [ subject, setSubject ] = useState('');
+  const [ content, setContent ] = useState('');
+  const handleSubmit = () => {
+    console.log( 'input data', email );
+  }
   return <>
     <div className="container">
         <Header/>
@@ -16,15 +20,22 @@ export default function ContactUs() {
           <label htmlFor="exampleFormControlInput1" className="form-label">이메일</label>
           <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" 
             value={ email }
+            onChange={ event => setEmail( event.target.value) }
           />
         </div>
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label">제목</label>
-          <input type="text" className="form-control" id="exampleFormControlInput1" placeholder="제목을 입력하세요." />
+          <input type="text" className="form-control" id="subjectInput" placeholder="제목을 입력하세요." 
+            value={ subject }
+            onChange={ event => setSubject( event.target.value) }
+          />
         </div>
         <div className="mb-3">
           <label htmlFor="exampleFormControlTextarea1" clasNames="form-label">문의내용</label>
-          <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          <textarea className="form-control" id="exampleFormControlTextarea1" rows="3"
+            value={ content }
+            onChange={ event => setContent( event.target.value) }
+          />
         </div>
 
         <button className="btn btn-primary btn-lg">문의하기</button>
