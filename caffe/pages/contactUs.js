@@ -6,8 +6,9 @@ export default function ContactUs() {
   const [ email, setEmail ] = useState('');
   const [ subject, setSubject ] = useState('');
   const [ content, setContent ] = useState('');
-  const handleSubmit = () => {
-    console.log( 'input data', email );
+  const handleSubmit = ( event ) => {
+    event.preventDefault();
+    console.log( 'input data', email, subject, content );
   }
   return <>
     <div className="container">
@@ -15,7 +16,7 @@ export default function ContactUs() {
         
         <h1 className="font-bold">Contact Us</h1>
 
-        <form>
+        <form onSubmit={handleSubmit}>
         <div className="mb-3">
           <label htmlFor="exampleFormControlInput1" className="form-label">이메일</label>
           <input type="email" className="form-control" id="exampleFormControlInput1" placeholder="name@example.com" 
