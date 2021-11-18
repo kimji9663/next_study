@@ -1,4 +1,3 @@
-import Link from 'next/link';
 import Header from '../components/Header';
 import { useState, useMemo, Fragment } from 'react';
 
@@ -22,14 +21,10 @@ export default function Order() {
   const [ selected, setSelected ] = useState( [] );
   console.log( 'selected', selected );
 
-  const sum = useMemo( () => {
-    console.log( 'useMemo 실행' );
-    let value = 0;
-    value += hasEspresso ? 2800 : 0;
-    value += hasAmericano ? 3000 : 0;
-    value += hasLatte ? 3500 : 0;
-    return value;
-  }, [ selected ] );
+  const sum = useMemo( () => { 
+    // reduce함수를 이용해서 이전 값에 현재 값을 더한다.
+    return selected.reduce((prevValue, item) => prevValue + item.price, 0) 
+  }, [selected]);
 
   return <>
     <div className="container">
